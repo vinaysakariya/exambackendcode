@@ -20,7 +20,7 @@ const app = express();
 env.config();
 const bodyParser = require("body-parser");
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3001;
 
 mongoose
   .connect(
