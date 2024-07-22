@@ -186,9 +186,12 @@ async function Uploadss(req, res) {
     const page = await browser.newPage();
     await b2.authorize();
 
-    await page.goto("https://examsystem123.vercel.app/userpages/quiz-start", {
-      waitUntil: "networkidle0",
-    });
+    await page.goto(
+      "https://exam-project-backend.vercel.app/userpages/quiz-start",
+      {
+        waitUntil: "networkidle0",
+      }
+    );
 
     const dimensions = await page.evaluate(() => {
       return {
@@ -258,7 +261,7 @@ async function Uploadss(req, res) {
           fileName: "upload/screenshot" + "/" + fullScreenshotPath,
           data: myFile,
         });
-        if (url === "https://examsystem123.vercel.app/student/login") {
+        if (url === "https://exam-project-backend.vercel.app/student/login") {
           return res.status(201).json("Exam is over");
         }
       }
