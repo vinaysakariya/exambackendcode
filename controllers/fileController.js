@@ -78,7 +78,7 @@ async function UploadquestionFile(req, res) {
 async function getFileInfo(fileName) {
   try {
     const response = await b2.listFileNames({
-      bucketId: "947d64b3985929e583fc0f12",
+      bucketId: "90de853f42e1dda09e040016",
       fileNamePrefix: "upload/",
       maxFileCount: 1000, // Adjust as necessary for your needs
     });
