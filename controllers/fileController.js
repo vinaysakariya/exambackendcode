@@ -4,8 +4,8 @@ const { b2 } = require("../middleware/multerMiddle");
 // const { generateDownloadLink } = require("./linkControllert");
 const fs = require("fs");
 const path = require("path");
-const bucketId = "947d64b3985929e583fc0f12";
-const bucketName = "KT-developer";
+const bucketId = "90de853f42e1dda09e040016";
+const bucketName = "AddExcelFile";
 const Questions = require("../models/questions");
 const chromium = require("chrome-aws-lambda");
 const puppeteer = require("puppeteer-core");
@@ -186,7 +186,7 @@ async function Uploadss(req, res) {
     const page = await browser.newPage();
     await b2.authorize();
 
-    await page.goto("https://frontend-mo7y.vercel.app/userpages/quiz-start", {
+    await page.goto("https://examsystem123.vercel.app/userpages/quiz-start", {
       waitUntil: "networkidle0",
     });
 
@@ -258,7 +258,7 @@ async function Uploadss(req, res) {
           fileName: "upload/screenshot" + "/" + fullScreenshotPath,
           data: myFile,
         });
-        if (url === "https://frontend-mo7y.vercel.app/student/login") {
+        if (url === "https://examsystem123.vercel.app/student/login") {
           return res.status(201).json("Exam is over");
         }
       }
@@ -278,8 +278,8 @@ async function generateDownloadLink(fileName) {
 
     // const bucketId = B2_BUCKET_ID;
     // const bucketName = B2_BUCKET_NAME;
-    const bucketId = "947d64b3985929e583fc0f12";
-    const bucketName = "KT-developer";
+    const bucketId = "90de853f42e1dda09e040016";
+    const bucketName = "AddExcelFile";
 
     const fileNamePrefix = "upload/"; // Ensure this is set correctly, example: 'sourceid/'
     const fullPath = `${fileNamePrefix}${fileName}`; // Full path includes the prefix
